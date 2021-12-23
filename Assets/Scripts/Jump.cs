@@ -5,7 +5,7 @@ using UnityEngine;
 public class Jump : MonoBehaviour
 {
     private Rigidbody2D rb2d;
-    public float jump = 300f;
+    public float jump = 500f;
     public float jc;
 
     // Start is called before the first frame update
