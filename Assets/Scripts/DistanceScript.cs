@@ -13,17 +13,17 @@ public class DistanceScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //得点を表示するテキストのゲームオブジェクトを指定
-        this.distancetext = GameObject.Find("DistanceText");
-        this.player = GameObject.Find("Player");
-        this.goal = GameObject.Find("Goal");
+        //距離の基準となるゲームオブジェクトを指定
+        distancetext = GameObject.Find("DistanceText");
+        player = GameObject.Find("Player");
+        goal = GameObject.Find("Goal");
     }
 
     // Update is called once per frame
     void Update()
     {
-        float posA = this.player.transform.position.x;
-        float posB = this.goal.transform.position.x;
+        float posA = player.transform.position.x;
+        float posB = goal.transform.position.x;
         float dist = posB - posA;
 
         if (dist >= 0)

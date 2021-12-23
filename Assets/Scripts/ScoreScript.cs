@@ -25,6 +25,8 @@ public class ScoreScript : MonoBehaviour
     {
         //得点を表示するテキストのゲームオブジェクトを指定
         this.scoreText = GameObject.Find("ScoreText");
+
+        score = 0;
     }
 
     // Update is called once per frame
