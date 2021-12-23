@@ -7,16 +7,17 @@ using UnityEngine.SceneManagement;
 public class ScoreScript : MonoBehaviour
 {
     GameObject scoreText;
-    int score = 0;
+    //得点を他のシーンで共有するため、「public static」で宣言
+    public static int score = 0;
 
     public void GetPlus()
     {
-        this.score += 1;
+        score += 1;
     }
 
     public void GetMinus()
     {
-        this.score -= 1;
+        score -= 1;
     }
 
     // Start is called before the first frame update
@@ -36,7 +37,12 @@ public class ScoreScript : MonoBehaviour
         else
         {
             //得点を表示するテキストのゲームオブジェクトのコンポーネントを指定して、表示するテキストを指定
-            this.scoreText.GetComponent<Text>().text = "Score " + this.score.ToString();
+            this.scoreText.GetComponent<Text>().text = "Score " + score.ToString();
         }
     }
+
+    public static int GetScore()
+    {
+        return score;
+    }    
 }
