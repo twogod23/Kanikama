@@ -1,15 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class StartScript : MonoBehaviour
+public class MinusSoundScript : MonoBehaviour
 {
     //サウンドを割り当てる関数を定義
     //インスペクター画面内のスクリプトのコンポーネントにサウンドを設定する！
-    public AudioClip startsound;
+    public AudioClip minussound;
     AudioSource audioSourse;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,12 +19,12 @@ public class StartScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            SceneManager.LoadScene("MainScene");
+        
+    }
 
-            //サウンドを鳴らす
-            audioSourse.PlayOneShot(startsound);
-        }
+    public void GetMinus()
+    {
+        //サウンドを鳴らす
+        audioSourse.PlayOneShot(minussound);
     }
 }

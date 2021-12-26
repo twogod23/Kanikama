@@ -8,7 +8,7 @@ public class GoToTitleScript : MonoBehaviour
     //ボタンが押されたときに呼び出される関数
     public void Select()
     {
-        //行われる操作 メインメニュー画面へ移動
+        //ボタンが押されたときに呼び出される関数
         SceneManager.LoadScene("TitleScene");
     }
 }

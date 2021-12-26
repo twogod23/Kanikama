@@ -18,3 +18,11 @@ The following packages were updated:
   com.unity.textmeshpro from version 3.0.1 to 3.0.6
   com.unity.timeline from version 1.4.6 to 1.4.8
   com.unity.xr.legacyinputhelpers from version 2.1.7 to 2.1.8
+
+=== Sun Dec 26 00:49:24 2021
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were updated:
+  com.unity.analytics from version 3.6.11 to 3.6.12

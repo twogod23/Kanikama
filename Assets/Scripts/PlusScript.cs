@@ -6,13 +6,19 @@ public class PlusScript : MonoBehaviour
 {
 
     //得点を管理する空のゲームオブジェクトを定義
-    GameObject director;
+    GameObject director1;
+
+    //サウンドを管理するゲームオブジェクトの定義
+    GameObject director2;
 
     // Start is called before the first frame update
     void Start()
     {
         //得点管理のゲームオブジェクトを認知させる
-        this.director = GameObject.Find("GameDirector");
+        director1 = GameObject.Find("GameDirector");
+
+        //サウンド管理のゲームオブジェクトの指定
+        director2 = GameObject.Find("PlusSound");
     }
 
     // Update is called once per frame
@@ -25,9 +31,14 @@ public class PlusScript : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collider)
     {
         //得点を管理するプログラムにデータを送信
-        this.director.GetComponent<ScoreScript>().GetPlus();
+        director1.GetComponent<ScoreScript>().GetPlus();
+
+        //サウンドを管理するプログラムにデータを送信
+        director2.GetComponent<PlusSoundScript>().GetPlus();
+
         Debug.Log("Plus");
 
+        //プラスブロックを消去
         Destroy(gameObject);
     }
 }
