@@ -13,6 +13,9 @@ public class Jump : MonoBehaviour
     public AudioClip jumpsound;
     AudioSource audioSourse;
 
+    //座標を測る物体の定義
+    GameObject player;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,12 +24,17 @@ public class Jump : MonoBehaviour
 
         //オーディオコンポーネントを取得
         audioSourse = GetComponent<AudioSource>();
+
+        //距離を測る物体の指定
+        player = GameObject.Find("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space) || Input.touchCount > 0)
+         float posP = player.transform.position.y;
+
+        if(Input.GetKeyDown(KeyCode.Space))
         {
             if(jc == 0)
             {
@@ -40,6 +48,23 @@ public class Jump : MonoBehaviour
                 jc = 2;
                 //サウンドを鳴らす
                 audioSourse.PlayOneShot(jumpsound);
+            }
+            else
+            {
+
+            }
+        }
+
+        if(Input.touchCount > 0)
+        {
+            if(posP < 2)
+            {
+                if(jc == 0)
+                {
+                    rb2d.AddForce(Vector2.up * jump);
+                    //サウンドを鳴らす
+                    audioSourse.PlayOneShot(jumpsound);                    
+                }
             }
             else
             {
