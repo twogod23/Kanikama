@@ -34,7 +34,7 @@ public class Jump : MonoBehaviour
     {
          float posP = player.transform.position.y;
 
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
         {
             if(jc == 0)
             {
@@ -48,23 +48,6 @@ public class Jump : MonoBehaviour
                 jc = 2;
                 //サウンドを鳴らす
                 audioSourse.PlayOneShot(jumpsound);
-            }
-            else
-            {
-
-            }
-        }
-
-        if(Input.touchCount > 0)
-        {
-            if(posP < 2)
-            {
-                if(jc == 0)
-                {
-                    rb2d.AddForce(Vector2.up * jump);
-                    //サウンドを鳴らす
-                    audioSourse.PlayOneShot(jumpsound);                    
-                }
             }
             else
             {
